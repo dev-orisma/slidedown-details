@@ -1,30 +1,71 @@
 <link rel="stylesheet" href="resource/css/index.css">
 <link rel="stylesheet" href="resource/css/slidedown-details.css">
 
+<main id="main">
+    <div class="container-details">
+        <section class="column native">
+            <h2 class="section-title">Details Native</h2>
+            <div data-use="native">
+                <details>
+                    <summary>Heading</summary>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt tempore aliquid eaque earum amet quisquam, impedit hic quos maiores harum, quidem nihil, magni tenetur esse autem excepturi! Aut, earum eos.</p>
+                    </div>
+                </details>
+            </div>
+            <div data-use="native">
+                <details>
+                    <summary>Heading</summary>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        <span class="line"></span>
+        <section class="column libs">
+            <h2 class="section-title">Details + Slidedown</h2>
+            <div data-use="libs">
+                <details>
+                    <summary>Heading</summary>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt tempore aliquid eaque earum amet quisquam, impedit hic quos maiores harum, quidem nihil, magni tenetur esse autem excepturi! Aut, earum eos.</p>
+                    </div>
+                </details>
+            </div>
+            <div data-use="libs">
+                <details>
+                    <summary>Heading</summary>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </div>
+    <div class="container-action">
+        <h2 class="section-title">Example</h2>
+        <div>
+            <button id="action-open">Open</button>
+            <button id="action-open-all">Open All</button>
+            <button id="action-close">Close</button>
+            <button id="action-close-all">Close All</button>
+            <button id="action-toggle">Toggle</button>
+            <button id="action-toggle-all">Toggle All</button>
+        </div>
+    </div>
+</main>
 
-<div slidedown-details>
-    <details>
-        <summary>Heading</summary>
-        <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt tempore aliquid eaque earum amet quisquam, impedit hic quos maiores harum, quidem nihil, magni tenetur esse autem excepturi! Aut, earum eos.</p>
-        </div>
-    </details>
-</div>
-<div slidedown-details>
-    <details>
-        <summary>Heading</summary>
-        <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-    </details>
-</div>
 
 <script src="resource/js/slidedown-details.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     // document.querySelectorAll('[slidedown-details]').forEach((el) => {
     //     var options = {
     //         duration: 300,
@@ -43,6 +84,51 @@
     //     duration: 300,
     // }
     // new SlidedownDetails(document.querySelectorAll('[slidedown-details]'), options);
-    new SlidedownDetails(document.querySelectorAll('[slidedown-details]'));
+    var slidedown = new SlidedownDetails(document.querySelectorAll('[data-use="libs"]'));
+    console.log(slidedown);
+
+    // ===========================================================================
+    // Button Action
+    var nativeElement = [];
+    document.querySelectorAll('[data-use="native"]').forEach(function(element) {
+        nativeElement.push(element.querySelector('details'));
+    });
+    document.getElementById('action-open').addEventListener('click', function() { 
+        nativeElement[0].open = true;
+        _slidedownArray[0].open();
+    })
+    document.getElementById('action-close').addEventListener('click', function() { 
+        nativeElement[0].open = false;
+        _slidedownArray[0].close();
+
+    })
+    document.getElementById('action-toggle').addEventListener('click', function() {
+        nativeElement[0].open = !nativeElement[0].open;
+        _slidedownArray[0].toggle();
+    })
+    document.getElementById('action-open-all').addEventListener('click', function() {
+        nativeElement.forEach(function(el) {
+            el.open = true;
+        });
+        _slidedownArray.forEach(function(el) {
+            el.open();
+        });
+    });
+    document.getElementById('action-close-all').addEventListener('click', function() {
+        nativeElement.forEach(function(el) {
+            el.open = false;
+        });
+        _slidedownArray.forEach(function(el) {
+            el.close();
+        });
+    });
+    document.getElementById('action-toggle-all').addEventListener('click', function() {
+        nativeElement.forEach(function(el) {
+            el.open = !el.open;
+        });
+        _slidedownArray.forEach(function(el) {
+            el.toggle();
+        });
+    });
 });
 </script>
