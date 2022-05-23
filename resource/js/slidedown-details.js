@@ -100,7 +100,7 @@ SlidedownDetails.prototype.slideup = function() {
 SlidedownDetails.prototype.slidedown = function() {
     var that = this;
     this.el.style.height = `${this.el.offsetHeight}px`;
-    this.el.open = open;
+    this.el.open = true;
     window.requestAnimationFrame(() => that.onOpen());
 };
 SlidedownDetails.prototype.onOpen = function() {
