@@ -18,15 +18,18 @@
             border-color: #000;
         }
     }
-    details {
-        &[open] {
-            opacity: 1;
-        }
-        summary {
-            // Remove default triangle
-            &::-webkit-details-marker {
-                display: none;
-            }
+}
+details {
+    &[open] {
+        opacity: 1;
+    }
+    summary {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        // Remove default triangle
+        &::-webkit-details-marker {
+            display: none;
         }
     }
 }

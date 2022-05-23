@@ -14,9 +14,14 @@
   border: 1px solid;
   border-color: #000;
 }
-[slidedown-details] details[open] {
+details[open] {
   opacity: 1;
 }
-[slidedown-details] details summary::-webkit-details-marker {
+details summary {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+details summary::-webkit-details-marker {
   display: none;
 }
