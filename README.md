@@ -96,30 +96,25 @@ Access with globla value: `_slidedownArray`.
 ## Methods
 Available methods:
 #### [`Open`](#open)
-<br>
 
 ```javascript
 _slidedownArray[0].open();
 ```
 open slide
 
-<br>
 
 
 #### [`Close`](#close)
-<br>
 
 ```javascript
 _slidedownArray[0].close();
 ```
 Close slide
 
-<br>
 
 #### [`Toggle`](#toggle)
-<br>
-
 ```javascript
 _slidedownArray[0].toggle();
 ```
 Toggle open/close
+
