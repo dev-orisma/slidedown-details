@@ -50,7 +50,7 @@ This example shows a simple `<details>` element with a `<summary>`
 <br>
 
 ---
-## Use Libery Javascript
+## Use Library Javascript
 Manual init
 ```javascript
 var slidedowns = document.querySelectorAll('[slidedown-details]');
