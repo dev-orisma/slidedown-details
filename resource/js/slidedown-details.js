@@ -18,9 +18,17 @@ function SlidedownDetails() {
     } else {
 
         options = arguments[0];
-        document.querySelectorAll('[' + this.selector + ']').forEach(function(elements) {
-            var w = new SlidedownDetails(elements, options);
-            _slidedownArray.push(w);
+        var selector = document.querySelectorAll('[' + this.selector + ']');
+        if (element.length) {
+            selector = element;
+        }
+        if (!selector.length) 
+            return;
+
+        selector.forEach(function(elements) {
+            var slidedown = new SlidedownDetails(elements, options);
+            _slidedownArray.push(slidedown);
+            return slidedown;
         });
 
     }
@@ -47,7 +55,7 @@ SlidedownDetails.prototype.onClick = function(event) {
 };
 SlidedownDetails.prototype.onChange = function() {
     this.el.style.overflow = 'hidden';
-}
+};
 SlidedownDetails.prototype.toggle = function() {
     this.onChange();
     if (this.isClose || !this.el.open) {
@@ -55,15 +63,15 @@ SlidedownDetails.prototype.toggle = function() {
     } else if (this.isOpen || this.el.open) {
         this.slideup();
     }
-}
+};
 SlidedownDetails.prototype.open = function() {
     this.onChange();
     this.slidedown();
-}
+};
 SlidedownDetails.prototype.close = function() {
     this.onChange();
     this.slideup();
-}
+};
 SlidedownDetails.prototype.slideup = function() {
     var that = this;
     this.isClose = true;
