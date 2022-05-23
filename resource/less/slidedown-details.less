@@ -1,0 +1,32 @@
+[slidedown-details] {
+    &.default-theme {
+        summary {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            border: 1px solid;
+            border-color: transparent;
+            &:focus {
+                border-color: black;
+            }
+        }
+
+        .content {
+            padding: 10px;
+            border: 1px solid;
+            border-color: #000;
+        }
+    }
+    details {
+        &[open] {
+            opacity: 1;
+        }
+        summary {
+            // Remove default triangle
+            &::-webkit-details-marker {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+[slidedown-details].default-theme summary {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid;
+  border-color: transparent;
+}
+[slidedown-details].default-theme summary:focus {
+  border-color: black;
+}
+[slidedown-details].default-theme .content {
+  padding: 10px;
+  border: 1px solid;
+  border-color: #000;
+}
+[slidedown-details] details[open] {
+  opacity: 1;
+}
+[slidedown-details] details summary::-webkit-details-marker {
+  display: none;
+}
