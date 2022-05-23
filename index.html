@@ -23,3 +23,26 @@
 </div>
 
 <script src="resource/js/slidedown-details.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // document.querySelectorAll('[slidedown-details]').forEach((el) => {
+    //     var options = {
+    //         duration: 300,
+    //     }
+    //     new SlidedownDetails(el, options);
+    // });
+    
+    // =====
+    // var options = {
+    //     duration: 300,
+    // }
+    // new SlidedownDetails(options);
+    
+    // =====
+    // var options = {
+    //     duration: 300,
+    // }
+    // new SlidedownDetails(document.querySelectorAll('[slidedown-details]'), options);
+    new SlidedownDetails(document.querySelectorAll('[slidedown-details]'));
+});
+</script>
