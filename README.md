@@ -3,6 +3,8 @@
 ## Introduction
 Make slidedown with native HTML tag `<details>`
 
+[Reference](https://css-tricks.com/how-to-animate-the-details-element/)
+
 **pros**
 - Native HTML
 - No Javascript Requieded to toggle open/close event
@@ -73,9 +75,9 @@ new SlidedownDetails(options);
 new SlidedownDetails();
 ```
 
-Auto init - Custom selector `(comming soon)`
+Auto init - Custom selector
 ```javascript
-var slidedowns = document.querySelectorAll('[slidedown-details]');
+var slidedowns = document.querySelectorAll('[element-details]');
 var options = {
     duration: 300,
 }
