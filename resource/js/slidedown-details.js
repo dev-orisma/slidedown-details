@@ -1,24 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // document.querySelectorAll('[slidedown-details]').forEach((el) => {
-    //     var options = {
-    //         duration: 300,
-    //     }
-    //     new SlidedownDetails(el, options);
-    // });
-    
-    // =====
-    // var options = {
-    //     duration: 300,
-    // }
-    // new SlidedownDetails(options);
-    
-    // =====
-    // var options = {
-    //     duration: 300,
-    // }
-    // new SlidedownDetails(document.querySelectorAll('[slidedown-details]'), options);
-    new SlidedownDetails(document.querySelectorAll('[slidedown-details]'));
-});
 _slidedownArray = [];
 function SlidedownDetails() {
     var element = arguments[0];
@@ -48,7 +27,6 @@ function SlidedownDetails() {
 }
 
 SlidedownDetails.prototype.init = function (element) {
-    // console.log(element);
     if (!this.isValidAttribute(element))
         return;
 
@@ -65,13 +43,27 @@ SlidedownDetails.prototype.init = function (element) {
 };
 SlidedownDetails.prototype.onClick = function(event) {
     event.preventDefault();
+    this.toggle();
+};
+SlidedownDetails.prototype.onChange = function() {
     this.el.style.overflow = 'hidden';
+}
+SlidedownDetails.prototype.toggle = function() {
+    this.onChange();
     if (this.isClose || !this.el.open) {
         this.slidedown();
     } else if (this.isOpen || this.el.open) {
         this.slideup();
     }
-};
+}
+SlidedownDetails.prototype.open = function() {
+    this.onChange();
+    this.slidedown();
+}
+SlidedownDetails.prototype.close = function() {
+    this.onChange();
+    this.slideup();
+}
 SlidedownDetails.prototype.slideup = function() {
     var that = this;
     this.isClose = true;
