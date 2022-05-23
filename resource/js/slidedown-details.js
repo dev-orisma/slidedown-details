@@ -35,8 +35,6 @@ function SlidedownDetails() {
 }
 
 SlidedownDetails.prototype.init = function (element) {
-    if (!this.isValidAttribute(element))
-        return;
 
     element.classList.add(this.opts.class);
     this.el = element.querySelector('details');
@@ -134,9 +132,6 @@ SlidedownDetails.prototype.onAnimationFinish = function(open) {
     this.isOpen = false;
     this.el.style.height = '';
     this.el.style.overflow = '';
-};
-SlidedownDetails.prototype.isValidAttribute = function(selector) {
-    return selector.hasAttribute('slidedown-details');
 };
 SlidedownDetails.prototype.extend = function(options) {
     if (typeof options === 'undefined' || typeof options !== 'object') 
