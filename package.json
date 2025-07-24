@@ -1,7 +1,7 @@
 {
   "name": "slidedown-details",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "description": "A animate tag <details> as slidedown",
   "keywords": [
     "slidedown",
@@ -16,6 +16,5 @@
     "url": "https://github.com/dev-orisma/slidedown-details.git"
   },
   "license": "MIT",
-  "author": "namedev <kasithas.songsiri@gmail.com>",
-  "main": "resource/js/slidedown-details.js"
+  "author": "namedev <kasithas.songsiri@gmail.com>"
 }
