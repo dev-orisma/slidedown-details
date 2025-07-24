@@ -1,5 +1,14 @@
 # Slidedown
 
+<p align="left">
+     <a href="https://github.com/dev-orisma/slidedown-details//blob/main/LICENSE">
+        <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green.svg" />
+    </a>
+    <a href="https://github.com/dev-orisma/slidedown-details/blob/main/CHANGELOG.md">
+        <img alt="version" src="https://img.shields.io/github/package-json/v/dev-orisma/slidedown-details" />
+    </a>
+</p>
+
 ## Introduction
 Make slidedown with native HTML tag `<details>`
 
